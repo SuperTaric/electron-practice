@@ -1,0 +1,34 @@
+{
+  "name": "electron-practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app/main/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:main": "electron .",
+    "start:render": "cd app/renderer/src/main && npm start",
+    "start": "concurrently \"npm run start:render\" \"wait-on http://localhost:3000 && npm run start:main\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SuperTaric/electron-practice.git"
+  },
+  "keywords": [],
+  "author": "taric",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SuperTaric/electron-practice/issues"
+  },
+  "homepage": "https://github.com/SuperTaric/electron-practice#readme",
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "electron": "^9.0.5",
+    "electron-rebuild": "^1.11.0",
+    "wait-on": "^5.0.1"
+  },
+  "dependencies": {
+    "electron-is-dev": "^1.2.0",
+    "robotjs": "^0.6.0",
+    "vkey": "^1.0.1"
+  }
+}

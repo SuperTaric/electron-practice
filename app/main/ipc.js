@@ -1,0 +1,13 @@
+const {ipcMain} = require('electron')
+const {send: sendMainWindow} = require('./windows/main')
+const {create: createControlWidow} = require('./windows/control')
+
+module.exports = function () {
+  ipcMain.handle('login', async () => {
+    return Math.floor(Math.random() * (999999 - 100000)) + 100000
+  })
+  ipcMain.on('control', async (e, remoteCode) => {
+    sendMainWindow('control-state-change', remoteCode, 1)
+    createControlWidow()
+  })
+}
