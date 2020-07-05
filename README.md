@@ -1,3 +1,3 @@
 # electron-practice
-npm run install 
-npm run start
+### npm run install 
+### npm run start
